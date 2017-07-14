@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Form Using jQuery - Demo Preview</title>
+<meta name="robots" content="noindex, nofollow">
+<!-- Include CSS File Here -->
+<link rel="stylesheet" href="css/style.css"/>
+<!-- Include CSS File Here -->
+<style>
+div.container{
+width: 600px;
+height: 810px;
+margin:10px auto;
+font-family: 'Droid Serif', serif;
+font-size:2em;
+position:relative;
+}
+div.main{
+width: 320px;
+margin-top: 80px;
+float:center;
+padding: 20px 88px 30px;
+background-color: rgba(187, 525, 184, 0.65);
+border: 15px solid white;
+box-shadow: 0 0 10px;
+border-radius: 4px;
+font-size: 20px;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+
+<script type="text/javascript">
+     function initGeolocation()
+     {
+        if( navigator.geolocation )
+        {
+           // Call getCurrentPosition with success and failure callbacks
+           navigator.geolocation.getCurrentPosition( success );
+        }
+        else
+        {
+           alert("Sorry, your browser does not support geolocation services.");
+        }
+     }
+
+     function success(position)
+     {
+
+         document.getElementById('clong').value = position.coords.longitude;
+         document.getElementById('clat').value = position.coords.latitude
+     }
+
+</script>
+</head>
+<body onLoad="initGeolocation();">
+<div class="container">
+Please enter the details of the Homeless
+<div class="main">
+<form class="form" method="get" action="homeless1.php">
+<table><tr><td>
+<label>Name :</label></td>
+<td><input type="text" name="name" id="name"><br><br>
+</td></tr>
+<tr><td><label>Location :</label></td>
+<td><input type="text" name="ltn" id="ltn"><br><br></td>
+</tr>
+<tr><td><label>Gender :</label></td>
+<td><input type="text" name="gender" id="gender"><br><br></td>
+</tr><tr><td><label>Can Work(mention if any):</label></td>
+<td><input type="text" name="canWork" id="canWork"></td>
+</tr><tr><td><label>Health condition:</label></td>
+<td><input type="text" name="health" id="health"><br><br></td>
+</tr>
+
+
+
+
+<tr>
+<td><label>Lat:</label></td>
+<td><input type="text" name="clat" id="clat" readonly></td>
+</tr>
+<tr>
+<td><label>Lon:</label></td>
+<td><input type="text" name="clong" id="clong" readonly></td>
+</tr>
+<tr>
+<td></td><td><center><input type="submit" name="Submit" id="submit" value="submit"></td></tr>
+<tr><td colspan="3"><h2>Thank you for sparing a minute!! </h2></td></tr>
+</form>
+</div>
+</div>
+</body>
+</html>
